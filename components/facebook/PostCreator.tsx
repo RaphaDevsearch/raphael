@@ -4,100 +4,31 @@ import Image from "next/image";
 
 export default function PostCreator() {
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        borderRadius: 8,
-        padding: 16,
-        marginBottom: 16,
-        border: "1px solid #e4e6eb",
-      }}
-    >
-      <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>
-        <div
-          style={{
-            position: "relative",
-            width: 40,
-            height: 40,
-            borderRadius: "50%",
-            overflow: "hidden",
-            flexShrink: 0,
-            minWidth: 40,
-          }}
-        >
+    <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+      <div className="flex items-center gap-3 mb-3">
+        <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
           <Image
             src="/raphael-profile.png"
             alt="Your profile"
             fill
-            style={{ objectFit: "cover" }}
+            className="object-cover"
           />
         </div>
         <input
           type="text"
           placeholder="What's on your mind?"
-          style={{
-            flex: 1,
-            border: "1px solid #e4e6eb",
-            borderRadius: 20,
-            padding: "12px 16px",
-            fontSize: 15,
-            outline: "none",
-            minHeight: 40,
-          }}
+          className="flex-1 border border-gray-100 rounded-full px-4 py-2 text-sm outline-none min-h-[40px]"
         />
       </div>
-      <div
-        style={{
-          display: "flex",
-          gap: 12,
-          borderTop: "1px solid #e4e6eb",
-          paddingTop: 12,
-          flexWrap: "wrap",
-        }}
-      >
-        <button
-          style={{
-            flex: "1 1 calc(50% - 6px)",
-            padding: "10px 8px",
-            border: "none",
-            backgroundColor: "transparent",
-            cursor: "pointer",
-            borderRadius: 6,
-            fontSize: "clamp(12px, 2vw, 13px)",
-            fontWeight: 500,
-            minHeight: 40,
-          }}
-        >
+
+      <div className="flex gap-3 border-t border-gray-100 pt-3 flex-wrap">
+        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">
           📹 Live video
         </button>
-        <button
-          style={{
-            flex: "1 1 calc(50% - 6px)",
-            padding: "10px 8px",
-            border: "none",
-            backgroundColor: "transparent",
-            cursor: "pointer",
-            borderRadius: 6,
-            fontSize: "clamp(12px, 2vw, 13px)",
-            fontWeight: 500,
-            minHeight: 40,
-          }}
-        >
+        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">
           📷 Photo/video
         </button>
-        <button
-          style={{
-            flex: "1 1 calc(50% - 6px)",
-            padding: "10px 8px",
-            border: "none",
-            backgroundColor: "transparent",
-            cursor: "pointer",
-            borderRadius: 6,
-            fontSize: "clamp(12px, 2vw, 13px)",
-            fontWeight: 500,
-            minHeight: 40,
-          }}
-        >
+        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">
           😊 Feeling
         </button>
       </div>

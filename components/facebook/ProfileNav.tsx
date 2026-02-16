@@ -7,43 +7,17 @@ export default function ProfileNav() {
   const tabs = ["All", "About", "Photos", "Videos", "Friends", "More"];
 
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        borderBottom: "1px solid #e4e6eb",
-        marginBottom: 24,
-        overflowX: "auto",
-        overflowY: "hidden",
-        WebkitOverflowScrolling: "touch",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1024,
-          margin: "0 auto",
-          display: "flex",
-          paddingLeft: 16,
-          gap: "2px",
-          minWidth: "min-content",
-        }}
-      >
+    <div className="bg-white border-b border-gray-100 mb-6 overflow-x-auto overflow-y-hidden touch-auto">
+      <div className="max-w-4xl mx-auto flex pl-4 gap-1 min-w-min">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            style={{
-              flex: "0 0 auto",
-              padding: "16px 12px",
-              border: "none",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-              fontSize: "clamp(12px, 2vw, 15px)",
-              fontWeight: activeTab === tab ? 600 : 500,
-              color: activeTab === tab ? "#0a66c2" : "#65676b",
-              borderBottom: activeTab === tab ? "3px solid #0a66c2" : "none",
-              whiteSpace: "nowrap",
-              transition: "all 0.2s ease",
-            }}
+            className={`flex-none px-4 py-3 text-sm font-medium whitespace-nowrap transition-all ${
+              activeTab === tab
+                ? "text-blue-600 border-b-4 border-blue-600"
+                : "text-gray-600"
+            }`}
           >
             {tab}
           </button>

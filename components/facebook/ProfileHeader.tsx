@@ -5,73 +5,29 @@ import Button from "../ui/Button";
 
 export default function ProfileHeader() {
   return (
-    <div
-      style={{
-        backgroundColor: "white",
-        padding: "16px",
-        borderBottom: "1px solid #e4e6eb",
-        marginBottom: 24,
-        borderRadius: 8,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 16,
-          alignItems: "center",
-          textAlign: "center",
-        }}
-      >
+    <div className="bg-white p-4 border-b border-gray-100 mb-6 rounded-lg">
+      <div className="flex flex-col gap-4 items-center text-center">
         {/* Profile Picture */}
-        <div
-          style={{
-            position: "relative",
-            width: 120,
-            height: 120,
-            borderRadius: "50%",
-            border: "4px solid white",
-            marginTop: -60,
-            overflow: "hidden",
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
-            flexShrink: 0,
-          }}
-        >
+        <div className="relative w-28 h-28 rounded-full border-4 border-white -mt-12 overflow-hidden shadow-md flex-shrink-0">
           <Image
             src="/raphael-profile.png"
             alt="Profile Picture"
             fill
-            style={{ objectFit: "cover" }}
+            className="object-cover"
             priority
           />
         </div>
+
         {/* Profile Info */}
-        <div style={{ flex: 1 }}>
-          <h1
-            style={{
-              margin: "0 0 8px 0",
-              fontSize: "clamp(20px, 5vw, 32px)",
-              fontWeight: 800,
-              color: "#050505",
-            }}
-          >
+        <div className="flex-1">
+          <h1 className="m-0 text-2xl md:text-3xl font-extrabold text-gray-900">
             Raphaël Randrianantoanina
           </h1>
-          <p style={{ margin: "4px 0", color: "#65676b", fontSize: "clamp(13px, 4vw, 15px)" }}>
-            @Randrianantoanina
-          </p>
-          <p style={{ margin: "4px 0", color: "#65676b", fontSize: "clamp(13px, 3vw, 13px)" }}>
+          <p className="mt-1 text-sm text-gray-500">@Randrianantoanina</p>
+          <p className="mt-1 text-sm text-gray-500">
             1.3K followers • 1.1K following
           </p>
-          <div
-            style={{
-              marginTop: 16,
-              display: "flex",
-              gap: 12,
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          <div className="mt-4 flex gap-3 justify-center flex-wrap">
             <Button>Message</Button>
             <Button>+ Follow</Button>
           </div>

@@ -2,103 +2,51 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <div style={{ width: "100%", minWidth: 0 }}>
+    <div className="w-full min-w-0">
       {/* Personal Details */}
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: 8,
-          padding: 16,
-          marginBottom: 16,
-          border: "1px solid #e4e6eb",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: 16,
-          }}
-        >
-          <h3 style={{ margin: 0, fontSize: "clamp(14px, 3vw, 15px)", fontWeight: 600 }}>
+      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="m-0 text-sm md:text-base font-semibold">
             Personal details
           </h3>
-          <button
-            style={{
-              border: "none",
-              background: "none",
-              cursor: "pointer",
-              fontSize: 20,
-            }}
-          >
+          <button className="border-none bg-transparent cursor-pointer text-lg">
             ✎
           </button>
         </div>
-        <div style={{ fontSize: "clamp(12px, 2vw, 13px)", color: "#65676b", lineHeight: 1.8 }}>
-          <div style={{ marginBottom: 12 }}>
+        <div className="text-sm text-gray-600 leading-relaxed">
+          <div className="mb-3">
             <strong>📍 Lives in</strong>
-            <p style={{ margin: 0 }}>Antananarivo, Madagascar</p>
+            <p className="m-0">Antananarivo, Madagascar</p>
           </div>
-          <div style={{ marginBottom: 12 }}>
+          <div className="mb-3">
             <strong>🏠 From</strong>
-            <p style={{ margin: 0 }}>Manatasoa</p>
+            <p className="m-0">Manatasoa</p>
           </div>
           <div>
             <strong>🎂 Birthday</strong>
-            <p style={{ margin: 0 }}>March 3, 2003</p>
+            <p className="m-0">March 3, 2003</p>
           </div>
         </div>
       </div>
 
       {/* Work & Education */}
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: 8,
-          padding: 16,
-          marginBottom: 16,
-          border: "1px solid #e4e6eb",
-        }}
-      >
-        <h3 style={{ margin: "0 0 12px 0", fontSize: "clamp(14px, 3vw, 15px)", fontWeight: 600 }}>
-          Work
-        </h3>
-        <p style={{ margin: 0, fontSize: "clamp(12px, 2vw, 13px)" }}>
+      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+        <h3 className="m-0 mb-3 text-sm md:text-base font-semibold">Work</h3>
+        <p className="m-0 text-sm">
           <strong>Enseignant contractuel</strong>
           <br />
-          <span style={{ color: "#65676b" }}>Jul 4, 2022 - Present</span>
+          <span className="text-gray-500">Jul 4, 2022 - Present</span>
         </p>
       </div>
 
       {/* Highlights */}
-      <div
-        style={{
-          backgroundColor: "white",
-          borderRadius: 8,
-          padding: 16,
-          border: "1px solid #e4e6eb",
-        }}
-      >
-        <h3 style={{ margin: "0 0 12px 0", fontSize: "clamp(14px, 3vw, 15px)", fontWeight: 600 }}>
+      <div className="bg-white rounded-lg p-4 border border-gray-100">
+        <h3 className="m-0 mb-3 text-sm md:text-base font-semibold">
           Highlights
         </h3>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
-            gap: 8,
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              style={{
-                backgroundColor: "#e4e6eb",
-                borderRadius: 8,
-                height: 100,
-              }}
-            />
+            <div key={i} className="bg-gray-200 rounded-lg h-24" />
           ))}
         </div>
       </div>
