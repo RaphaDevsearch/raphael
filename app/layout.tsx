@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
-import "../styles/globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Praxis Portfolio - Raphaël Randrianantoanina",
+  title: "Raphaël Randrianantoanina",
   description:
     "Praxis portfolio showcasing projects and experience of Raphaël Randrianantoanina",
 };
@@ -32,6 +32,7 @@ export default function RootLayout({
         style={{ margin: 0, padding: 0 }}
       >
         <Navbar />
+
         {children}
         <Footer />
       </body>
