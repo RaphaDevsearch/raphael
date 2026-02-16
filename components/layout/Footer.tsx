@@ -1,45 +1,24 @@
-import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#f0f2f5",
-        borderTop: "1px solid #e4e6eb",
-        padding: "clamp(16px, 3vw, 24px)",
-        marginTop: 48,
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1024,
-          margin: "0 auto",
-          textAlign: "center",
-          fontSize: "clamp(11px, 2vw, 12px)",
-          color: "#65676b",
-        }}
-      >
-        <p style={{ margin: "0 0 8px 0" }}>
+    <footer className="bg-gray-50 border-t border-gray-100 mt-12">
+      <div className="max-w-4xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
+        <p className="mb-2">
           © {new Date().getFullYear()} Raphaël Randrianantoanina - Praxis
           Portfolio
         </p>
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <a href="/about" style={{ color: "#0a66c2", textDecoration: "none" }}>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/about" className="text-blue-600 hover:underline">
             About
-          </a>
-          <a href="/projects" style={{ color: "#0a66c2", textDecoration: "none" }}>
+          </Link>
+          <Link href="/projects" className="text-blue-600 hover:underline">
             Projects
-          </a>
-          <a href="/contact" style={{ color: "#0a66c2", textDecoration: "none" }}>
+          </Link>
+          <Link href="/contact" className="text-blue-600 hover:underline">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
