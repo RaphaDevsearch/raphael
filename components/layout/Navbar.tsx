@@ -43,7 +43,7 @@ export default function Navbar() {
         scrolled ? "bg-white shadow-sm" : "bg-white/70"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+      <div className="mx-auto  px-4 h-16 flex items-center justify-between">
         
         {/* LEFT LOGO */}
         <Link href="/" className="flex items-center">
