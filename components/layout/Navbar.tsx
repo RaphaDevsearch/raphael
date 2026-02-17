@@ -1,14 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import {
+  Home,
+  BookOpen,
+  FolderKanban,
+  FlaskConical,
+  Mail,
+  type LucideIcon,
+} from "lucide-react";
+
+type NavItem = {
+  href: string;
+  icon: LucideIcon;
+};
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -17,147 +30,103 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navLinks: [string, string][] = [
-    ["/", "Home"],
-    ["/studyhub", "StudyHub"],
-    ["/projects", "Projects"],
-    ["/demos", "Demos"],
+  const navLinks: NavItem[] = [
+    { href: "/", icon: Home },
+    { href: "/studyhub", icon: BookOpen },
+    { href: "/projects", icon: FolderKanban },
+    { href: "/lab", icon: FlaskConical },
   ];
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/60 backdrop-blur-sm transition ${
-        scrolled ? "bg-white/95 shadow-md" : ""
+      className={`sticky top-0 z-50 backdrop-blur-sm transition ${
+        scrolled ? "bg-white shadow-md" : "bg-white/70"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* LEFT */}
-        <div className="flex items-center gap-6">
-          <Link href="/" aria-label="Home" className="inline-flex items-center">
-            <div className="w-12 h-12 rounded-lg flex items-center justify-center font-extrabold text-blue-600 bg-gradient-to-b from-white to-blue-50 shadow-sm">
-              PX
-            </div>
-          </Link>
+      <div className="mx-auto px-4 h-16 flex items-center justify-between">
+        {/* LEFT LOGO */}
+        <Link href="/" className="flex items-center">
+          <div className="w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center">
+            PX
+          </div>
+        </Link>
 
-          <nav
-            className="hidden md:flex items-center gap-8"
-            aria-label="Primary"
-          >
-            {navLinks.map(([href, label]) => {
-              const active = pathname === href;
-              return (
-                <Link
-                  key={href}
-                  href={href}
-                  className={`relative group text-sm font-semibold transition-colors ${
-                    active
-                      ? "text-blue-600"
-                      : "text-gray-600 hover:text-blue-600"
-                  }`}
-                >
-                  {label}
-                  <span
-                    className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 rounded bg-gradient-to-r from-blue-500 to-blue-300 transition-all ${
-                      active ? "w-6" : "w-0 group-hover:w-6"
-                    }`}
-                  />
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
+        {/* CENTER ICON NAVIGATION */}
+        <nav className="hidden md:flex items-center gap-20">
+          {navLinks.map((item) => {
+            const Icon = item.icon;
+            const active = pathname === item.href;
 
-        {/* RIGHT */}
-        <div className="flex items-center gap-3">
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`relative p-2 rounded-lg transition ${
+                  active
+                    ? "text-blue-600"
+                    : "text-gray-600 hover:text-blue-600"
+                }`}
+              >
+                <Icon size={40} strokeWidth={2} />
+                {active && (
+                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-1 bg-blue-600 rounded-full" />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-5">
+          {/* Contact Icon */}
           <button
             onClick={() => {
               const target = document.getElementById("contact");
               if (target) target.scrollIntoView({ behavior: "smooth" });
-              else setContactOpen(true);
             }}
-            className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-gradient-to-b from-blue-600 to-blue-500 text-white font-semibold shadow-md transform transition-transform duration-150 hover:-translate-y-1"
+            className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition cursor-pointer"
           >
-            ✉ Contact
+            <Mail size={36} />
           </button>
 
-          <div className="flex items-center gap-2 ml-2">
-            <div className="w-9 h-9 rounded-full flex items-center justify-center bg-gradient-to-b from-gray-100 to-blue-50 text-blue-600 font-bold">
-              JR
-            </div>
-            <span className="hidden md:inline text-sm font-medium text-gray-700">
-              Profile
-            </span>
+          {/* Profile Image */}
+          <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-200">
+            <Image
+              src="/raphael-profile.png" // place image inside /public
+              alt="Profile"
+              width={36}
+              height={36}
+              className="object-cover"
+            />
           </div>
 
+          {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen((s) => !s)}
             className="md:hidden p-2"
-            aria-label="Toggle menu"
           >
             <span className="text-2xl">{mobileMenuOpen ? "✕" : "☰"}</span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${mobileMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}
-        aria-hidden={!mobileMenuOpen}
-      >
-        <div className="flex flex-col px-4 py-3 border-t border-gray-100 bg-white">
-          {navLinks.map(([href, label]) => (
-            <Link
-              key={href}
-              href={href}
-              className="py-3 text-gray-700 font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {label}
-            </Link>
-          ))}
-
-          <button
-            onClick={() => {
-              const target = document.getElementById("contact");
-              if (target) target.scrollIntoView({ behavior: "smooth" });
-              else setContactOpen(true);
-              setMobileMenuOpen(false);
-            }}
-            className="mt-2 px-3 py-2 rounded-md bg-gradient-to-b from-blue-600 to-blue-500 text-white font-semibold shadow-md"
-          >
-            ✉ Contact
-          </button>
-        </div>
-      </div>
-
-      {/* Contact modal fallback */}
-      {contactOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-          onClick={() => setContactOpen(false)}
-        >
-          <div
-            className="bg-white rounded-lg p-6 w-11/12 sm:w-96 shadow-xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="text-lg font-semibold">Contact</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              You can reach me at{" "}
-              <a
-                className="text-blue-600 underline"
-                href="mailto:hello@example.com"
-              >
-                hello@example.com
-              </a>
-            </p>
-            <div className="mt-4 text-right">
-              <button
-                className="px-3 py-1.5 text-sm font-semibold text-gray-700"
-                onClick={() => setContactOpen(false)}
-              >
-                Close
-              </button>
-            </div>
+      {/* MOBILE MENU */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-gray-100 bg-white">
+          <div className="flex flex-col items-center py-4 gap-6">
+            {navLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-700"
+                >
+                  <Icon size={26} />
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
