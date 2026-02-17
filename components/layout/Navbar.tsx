@@ -10,6 +10,7 @@ import {
   FolderKanban,
   FlaskConical,
   Mail,
+  LayoutGrid,
   type LucideIcon,
 } from "lucide-react";
 
@@ -20,7 +21,6 @@ type NavItem = {
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -39,20 +39,21 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 backdrop-blur-sm transition ${
-        scrolled ? "bg-white shadow-md" : "bg-white/70"
+      className={`sticky top-0 z-50 backdrop-blur-sm transition-all duration-300 ${
+        scrolled ? "bg-white shadow-sm" : "bg-white/70"
       }`}
     >
-      <div className="mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
+        
         {/* LEFT LOGO */}
         <Link href="/" className="flex items-center">
-          <div className="w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center">
+          <div className="w-9 h-9 rounded-full bg-blue-600 text-white font-semibold text-sm flex items-center justify-center">
             PX
           </div>
         </Link>
 
-        {/* CENTER ICON NAVIGATION */}
-        <nav className="hidden md:flex items-center gap-20">
+        {/* CENTER ICON NAVIGATION (DESKTOP ONLY) */}
+        <nav className="hidden md:flex items-center gap-16">
           {navLinks.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href;
@@ -61,15 +62,19 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative p-2 rounded-lg transition ${
-                  active
-                    ? "text-blue-600"
-                    : "text-gray-600 hover:text-blue-600"
-                }`}
+                className="relative flex items-center justify-center p-2 group"
               >
-                <Icon size={40} strokeWidth={2} />
+                <Icon
+                  size={24}
+                  strokeWidth={2}
+                  className={`transition-colors ${
+                    active
+                      ? "text-blue-600"
+                      : "text-gray-600 group-hover:text-blue-600"
+                  }`}
+                />
                 {active && (
-                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-1 bg-blue-600 rounded-full" />
+                  <span className="absolute -bottom-2 w-6 h-1 bg-blue-600 rounded-full" />
                 )}
               </Link>
             );
@@ -77,59 +82,36 @@ export default function Navbar() {
         </nav>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-5">
-          {/* Contact Icon */}
+        <div className="flex items-center gap-4">
+          
+          {/* GRID ICON (Mobile App Style) */}
+          <button className="md:hidden p-2 rounded-full hover:bg-gray-100 transition">
+            <LayoutGrid size={22} />
+          </button>
+
+          {/* CONTACT ICON */}
           <button
             onClick={() => {
               const target = document.getElementById("contact");
               if (target) target.scrollIntoView({ behavior: "smooth" });
             }}
-            className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition cursor-pointer"
+            className="p-2 rounded-full hover:bg-gray-100 transition"
           >
-            <Mail size={36} />
+            <Mail size={22} />
           </button>
 
-          {/* Profile Image */}
-          <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-200">
+          {/* PROFILE IMAGE */}
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-200 hover:opacity-90 transition cursor-pointer">
             <Image
-              src="/raphael-profile.png" // place image inside /public
+              src="/raphael-profile.png"
               alt="Profile"
-              width={36}
-              height={36}
+              width={32}
+              height={32}
               className="object-cover"
             />
           </div>
-
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen((s) => !s)}
-            className="md:hidden p-2"
-          >
-            <span className="text-2xl">{mobileMenuOpen ? "✕" : "☰"}</span>
-          </button>
         </div>
       </div>
-
-      {/* MOBILE MENU */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
-          <div className="flex flex-col items-center py-4 gap-6">
-            {navLinks.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-gray-700"
-                >
-                  <Icon size={26} />
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </header>
   );
 }
