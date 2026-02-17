@@ -8,7 +8,7 @@ import {
   Home,
   BookOpen,
   FolderKanban,
-  Cpu  ,
+  Cpu,
   Mail,
   LayoutGrid,
   type LucideIcon,
@@ -22,6 +22,8 @@ type NavItem = {
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  // on mobil
+  const [mobileGridOpen, setMobileGridOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -34,7 +36,7 @@ export default function Navbar() {
     { href: "/", icon: Home },
     { href: "/studyhub", icon: BookOpen },
     { href: "/projects", icon: FolderKanban },
-    { href: "/lab", icon: Cpu    },
+    { href: "/lab", icon: Cpu },
   ];
 
   return (
@@ -44,7 +46,6 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto  px-4 h-16 flex items-center justify-between">
-        
         {/* LEFT LOGO */}
         <Link href="/" className="flex items-center">
           <div className="w-9 h-9 rounded-full bg-blue-600 text-white font-semibold text-sm flex items-center justify-center">
@@ -83,11 +84,47 @@ export default function Navbar() {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
-          
           {/* GRID ICON (Mobile App Style) */}
-          <button className="md:hidden p-2 rounded-full hover:bg-gray-100 transition">
-            <LayoutGrid size={22} />
-          </button>
+          <div className="relative md:hidden">
+            <button
+              onClick={() => setMobileGridOpen(!mobileGridOpen)}
+              className="p-2 rounded-full hover:bg-gray-100 transition"
+            >
+              <LayoutGrid size={22} />
+            </button>
+
+            {/* POPUP MENU */}
+            {mobileGridOpen && (
+              <div className="absolute right-0 mt-3 bg-white shadow-lg rounded-2xl px-6 py-4 flex items-center gap-8 animate-in fade-in zoom-in-95 duration-200">
+                {navLinks.map((item) => {
+                  const Icon = item.icon;
+                  const active = pathname === item.href;
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileGridOpen(false)}
+                      className="relative flex flex-col items-center group"
+                    >
+                      <Icon
+                        size={22}
+                        className={`transition ${
+                          active
+                            ? "text-blue-600"
+                            : "text-gray-600 group-hover:text-blue-600"
+                        }`}
+                      />
+
+                      {active && (
+                        <span className="absolute -bottom-2 w-5 h-1 bg-blue-600 rounded-full" />
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
 
           {/* CONTACT ICON */}
           <button
