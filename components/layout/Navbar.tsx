@@ -8,7 +8,7 @@ import {
   Home,
   BookOpen,
   FolderKanban,
-  FlaskConical,
+  Cpu  ,
   Mail,
   LayoutGrid,
   type LucideIcon,
@@ -34,7 +34,7 @@ export default function Navbar() {
     { href: "/", icon: Home },
     { href: "/studyhub", icon: BookOpen },
     { href: "/projects", icon: FolderKanban },
-    { href: "/lab", icon: FlaskConical },
+    { href: "/lab", icon: Cpu    },
   ];
 
   return (
