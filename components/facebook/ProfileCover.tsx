@@ -3,12 +3,13 @@ import Image from "next/image";
 
 export default function ProfileCover() {
   return (
-    <div className="relative h-[clamp(200px,40vw,400px)] bg-gray-200 overflow-hidden rounded-b-[10px]">
+    <div className="relative w-full aspect-[3/1] max-h-[600px] overflow-hidden rounded-b-[10px] bg-gray-200">
       <Image
         src="/raphael-cover.png"
         alt="Cover Photo"
         fill
-        className="object-fit-cover "
+        className="object-content object-center"
+        sizes="100vw"
         priority
       />
     </div>

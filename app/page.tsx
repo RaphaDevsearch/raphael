@@ -8,7 +8,7 @@ import Feed from "@/components/facebook/Feed";
 export default function HomePage() {
   return (
     <main className="bg-[#f0f2f5] min-h-screen flex flex-col items-center">
-      <div className="w-full max-w-[1200px] ">
+      <div className="w-full max-w-[1400px] ">
         {/* Cover Photo */}
         <ProfileCover />
 
