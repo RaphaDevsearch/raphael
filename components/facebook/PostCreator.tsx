@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function PostCreator() {
   return (
-    <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+    <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100 shadow-md shadow-gray-300">
       <div className="flex items-center gap-3 mb-3">
         <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
           <Image

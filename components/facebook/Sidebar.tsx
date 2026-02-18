@@ -4,7 +4,7 @@ export default function Sidebar() {
   return (
     <div className="w-full min-w-0">
       {/* Personal Details */}
-      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100 shadow-md shadow-gray-300">
         <div className="flex justify-between items-center mb-4">
           <h3 className="m-0 text-sm md:text-base font-semibold">
             Personal details
@@ -30,7 +30,7 @@ export default function Sidebar() {
       </div>
 
       {/* Work & Education */}
-      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100">
+      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100 shadow-md shadow-gray-300">
         <h3 className="m-0 mb-3 text-sm md:text-base font-semibold">Work</h3>
         <p className="m-0 text-sm">
           <strong>Enseignant contractuel</strong>
@@ -40,7 +40,7 @@ export default function Sidebar() {
       </div>
 
       {/* Highlights */}
-      <div className="bg-white rounded-lg p-4 border border-gray-100">
+      <div className="bg-white rounded-lg p-4 border border-gray-100 shadow-md shadow-gray-300">
         <h3 className="m-0 mb-3 text-sm md:text-base font-semibold">
           Highlights
         </h3>

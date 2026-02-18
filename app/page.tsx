@@ -20,7 +20,7 @@ export default function HomePage() {
           {/* Two Column Layout */}
           <div className="max-w-[1300px] mx-auto flex flex-col justify-between lg:flex-row  gap-3">
             {/* Sidebar - hidden on mobile */}
-            <div className="hidden lg:block lg:w-1/3  flex-1 max-w-[550px]">
+            <div className="lg:block lg:w-1/3  flex-1 max-w-[550px]">
               <Sidebar />
             </div>
 

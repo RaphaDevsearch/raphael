@@ -19,7 +19,7 @@ export default function Post({
   comments = 0,
 }: PostProps) {
   return (
-    <div className="bg-white rounded-lg mb-4 border border-gray-100 overflow-hidden">
+    <div className="bg-white rounded-lg mb-4 border border-gray-100 overflow-hidden shadow-md shadow-gray-300">
       {/* Post Header */}
       <div className="p-3 flex justify-between items-center gap-2">
         <div className="flex items-center gap-3 min-w-0">
