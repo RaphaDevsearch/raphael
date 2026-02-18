@@ -18,14 +18,14 @@ export default function HomePage() {
         {/* Content Area */}
         <div>
           {/* Two Column Layout */}
-          <div className="max-w-[1024px] mx-auto flex flex-col lg:flex-row gap-6 px-4">
+          <div className="max-w-[1300px] mx-auto flex flex-col justify-between lg:flex-row  gap-3">
             {/* Sidebar - hidden on mobile */}
-            <div className="hidden lg:block lg:w-1/3">
+            <div className="hidden lg:block lg:w-1/3  flex-1 max-w-[550px]">
               <Sidebar />
             </div>
 
             {/* Feed */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 ">
               <Feed />
             </div>
           </div>

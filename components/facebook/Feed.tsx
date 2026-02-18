@@ -32,7 +32,7 @@ export default function Feed() {
   ];
 
   return (
-    <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 w-full max-w-[700px] mx-auto">
+    <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 w-full ">
       <PostCreator />
       {posts.map((post, idx) => (
         <Post key={idx} {...post} />
