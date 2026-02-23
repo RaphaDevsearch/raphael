@@ -32,15 +32,19 @@ export default function ProfileHeader() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 flex-shrink-0 w-full sm:w-auto">
-          <Button className="bg-black text-white hover:bg-gray-900 transition text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2 whitespace-nowrap flex-1 sm:flex-none">
-            View Projects
-          </Button>
+        <div className="flex items-center gap-2 flex-shrink-0">
+  <button className="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+    Connect
+  </button>
 
-          <Button className="bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200 transition text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2 whitespace-nowrap flex-1 sm:flex-none">
-            Download CV
-          </Button>
-        </div>
+  <button className="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 transition">
+    Collaborate
+  </button>
+
+  <button className="px-3 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition">
+    More
+  </button>
+</div>
       </div>
     </div>
   );
