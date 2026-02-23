@@ -1,36 +1,45 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { PROFILE_DATA } from "@/constants/data";
 
 export default function ProfileHeader() {
   return (
-    <div className="bg-white p-4 border-b border-gray-100 mb-6 rounded-lg">
-      <div className="flex flex-col gap-4 items-center text-center">
-        {/* Profile Picture */}
-        <div className="relative w-28 h-28 rounded-full border-4 border-white -mt-12 overflow-hidden shadow-md flex-shrink-0">
-          <Image
-            src="/raphael-profile.png"
-            alt="Profile Picture"
-            fill
-            className="object-cover"
-            priority
-          />
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 px-6 py-6 bg-white border-b border-gray-200">
+      {/* Profile Picture */}
+      <div className="w-[140px] h-[140px] flex-shrink-0 relative">
+        <Image
+          src={PROFILE_DATA.profileImage}
+          alt={PROFILE_DATA.name}
+          fill
+          className="rounded-full border border-gray-200 object-cover shadow-sm"
+        />
+      </div>
+
+      {/* Profile Information and Actions */}
+      <div className="flex flex-1 flex-col justify-between lg:flex-row lg:items-start gap-6">
+        {/* Identity Block */}
+        <div className="space-y-2">
+          <h1 className="text-3xl font-semibold text-gray-900 tracking-tight">
+            {PROFILE_DATA.name}
+          </h1>
+
+          <p className="text-sm text-gray-500">{PROFILE_DATA.title}</p>
+
+          <p className="text-sm text-gray-600 max-w-md">{PROFILE_DATA.bio}</p>
         </div>
 
-        {/* Profile Info */}
-        <div className="flex-1">
-          <h1 className="m-0 text-2xl md:text-3xl font-extrabold text-gray-900">
-            Raphaël Randrianantoanina
-          </h1>
-          <p className="mt-1 text-sm text-gray-500">@Randrianantoanina</p>
-          <p className="mt-1 text-sm text-gray-500">
-            1.3K followers • 1.1K following
-          </p>
-          <div className="mt-4 flex gap-3 justify-center flex-wrap">
-            <Button>Message</Button>
-            <Button>+ Follow</Button>
-          </div>
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          <Button className="bg-black text-white hover:bg-gray-900 transition">
+            View Projects
+          </Button>
+
+          <Button className="bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200 transition">
+            Download CV
+          </Button>
         </div>
       </div>
     </div>

@@ -1,35 +1,26 @@
 "use client";
+
 import React from "react";
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-};
+  variant?: "primary" | "secondary";
+}
 
-export default function Button({ children, ...rest }: Props) {
+export default function Button({
+  children,
+  className = "",
+  variant = "primary",
+  ...rest
+}: ButtonProps) {
+  // Default styles that will be overridden by className
+  const defaultClassName =
+    variant === "primary"
+      ? "px-5 py-2 rounded-md border border-blue-600 bg-blue-600 text-white cursor-pointer font-semibold text-sm transition-colors hover:bg-blue-700 hover:border-blue-700"
+      : "px-5 py-2 rounded-md border border-gray-300 bg-gray-100 text-gray-900 cursor-pointer font-semibold text-sm transition-colors hover:bg-gray-200";
+
   return (
-    <button
-      {...rest}
-      style={{
-        padding: "clamp(10px, 2vw, 12px) clamp(16px, 3vw, 20px)",
-        borderRadius: 6,
-        border: "1px solid #0a66c2",
-        backgroundColor: "#0a66c2",
-        color: "white",
-        cursor: "pointer",
-        fontSize: "clamp(13px, 2vw, 14px)",
-        fontWeight: 600,
-        transition: "background-color 0.2s ease",
-        minHeight: 40,
-        minWidth: 40,
-        ...rest.style,
-      }}
-      onMouseEnter={(e) => {
-        (e.target as HTMLButtonElement).style.backgroundColor = "#0958a8";
-      }}
-      onMouseLeave={(e) => {
-        (e.target as HTMLButtonElement).style.backgroundColor = "#0a66c2";
-      }}
-    >
+    <button className={`${defaultClassName} ${className}`} {...rest}>
       {children}
     </button>
   );

@@ -1,15 +1,10 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
+import { Post as PostType } from "@/types";
 
-type PostProps = {
-  author: string;
-  timestamp: string;
-  content: string;
-  image?: string;
-  likes?: number;
-  comments?: number;
-};
+type PostProps = PostType;
 
 export default function Post({
   author,
@@ -27,7 +22,8 @@ export default function Post({
             <Image
               src="/raphael-profile.png"
               alt={author}
-              fill
+              width={40}
+              height={40}
               className="object-cover"
             />
           </div>
@@ -37,7 +33,7 @@ export default function Post({
           </div>
         </div>
 
-        <button className="border-none bg-transparent cursor-pointer text-lg p-1 min-h-[40px] min-w-[40px] flex items-center justify-center">
+        <button className="border-none bg-transparent cursor-pointer text-lg p-1 min-h-[40px] min-w-[40px] flex items-center justify-center hover:bg-gray-100 rounded transition">
           ⋯
         </button>
       </div>

@@ -8,7 +8,7 @@ export default function ProfileCover() {
         src="/raphael-cover.png"
         alt="Cover Photo"
         fill
-        className="object-content object-center"
+        className="object-cover object-center"
         sizes="100vw"
         priority
       />
