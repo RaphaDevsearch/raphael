@@ -4,19 +4,12 @@ type Props = { title: string; description?: string };
 
 export default function Card({ title, description }: Props) {
   return (
-    <article
-      style={{
-        padding: 16,
-        border: "1px solid #e4e6eb",
-        borderRadius: 8,
-        backgroundColor: "white",
-      }}
-    >
-      <h3 style={{ margin: "0 0 8px 0", fontSize: 15, fontWeight: 600 }}>
+    <article className="p-3 sm:p-4 border border-[#e4e6eb] rounded-lg bg-white">
+      <h3 className="m-0 mb-2 text-sm sm:text-base font-semibold text-gray-900">
         {title}
       </h3>
       {description && (
-        <p style={{ margin: 0, fontSize: 13, color: "#65676b" }}>
+        <p className="m-0 text-xs sm:text-sm text-[#65676b]">
           {description}
         </p>
       )}

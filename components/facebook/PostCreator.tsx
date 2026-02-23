@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function PostCreator() {
   return (
-    <div className="bg-white rounded-lg p-4 mb-4 border border-gray-100 shadow-md shadow-gray-300">
+    <div className="bg-white rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 border border-gray-100 shadow-md shadow-gray-300">
       {/* Input Section */}
-      <div className="flex items-center gap-3 mb-3">
-        <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+        <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden flex-shrink-0">
           <Image
             src="/raphael-profile.png"
             alt="Your profile"
@@ -20,19 +20,19 @@ export default function PostCreator() {
         <input
           type="text"
           placeholder="What's on your mind?"
-          className="flex-1 border border-gray-100 rounded-full px-4 py-2 text-base outline-none min-h-[40px] focus:border-gray-300 transition"
+          className="flex-1 border border-gray-100 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base outline-none min-h-[32px] sm:min-h-[40px] focus:border-gray-300 transition"
         />
       </div>
 
       {/* Action Buttons */}
-      <div className="flex gap-3 border-t border-gray-100 pt-3 flex-wrap">
-        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
+      <div className="flex gap-2 sm:gap-3 border-t border-gray-100 pt-2 sm:pt-3 flex-wrap">
+        <button className="flex-1 min-w-[calc(50%_-_4px)] sm:min-w-[calc(33.333%_-_8px)] px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-base font-medium hover:bg-gray-100 transition whitespace-nowrap">
           📹 Live video
         </button>
-        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
+        <button className="flex-1 min-w-[calc(50%_-_4px)] sm:min-w-[calc(33.333%_-_8px)] px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-base font-medium hover:bg-gray-100 transition whitespace-nowrap">
           📷 Photo/video
         </button>
-        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
+        <button className="hidden sm:block flex-1 min-w-[calc(33.333%_-_8px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
           😊 Feeling
         </button>
       </div>
