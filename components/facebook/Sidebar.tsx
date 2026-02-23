@@ -6,7 +6,7 @@ export default function Sidebar() {
       {/* Personal Details Section */}
       <div className="bg-white rounded-lg p-4 border border-gray-100 shadow-md shadow-gray-300">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="m-0 text-sm md:text-base font-semibold text-gray-900">
+          <h3 className="m-0 text-2xl font-semibold text-gray-900">
             Personal details
           </h3>
           <button className="border-none bg-transparent cursor-pointer text-lg hover:text-gray-700 transition">
@@ -31,7 +31,7 @@ export default function Sidebar() {
 
       {/* Work & Education Section */}
       <div className="bg-white rounded-lg p-4 border border-gray-100 shadow-md shadow-gray-300">
-        <h3 className="m-0 mb-3 text-sm md:text-base font-semibold text-gray-900">
+        <h3 className="m-0 mb-3 text-2xl font-semibold text-gray-900">
           Work
         </h3>
         <p className="m-0 text-sm">
@@ -43,7 +43,7 @@ export default function Sidebar() {
 
       {/* Highlights Section */}
       <div className="bg-white rounded-lg p-4 border border-gray-100 shadow-md shadow-gray-300">
-        <h3 className="m-0 mb-3 text-sm md:text-base font-semibold text-gray-900">
+        <h3 className="m-0 mb-3 text-2xl font-semibold text-gray-900">
           Highlights
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">

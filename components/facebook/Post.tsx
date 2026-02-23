@@ -28,8 +28,8 @@ export default function Post({
             />
           </div>
           <div className="min-w-0">
-            <p className="m-0 font-semibold text-sm truncate">{author}</p>
-            <p className="m-0 text-xs text-gray-500">{timestamp}</p>
+            <p className="m-0 font-semibold text-lg truncate">{author}</p>
+            <p className="m-0 text-sm text-gray-500">{timestamp}</p>
           </div>
         </div>
 
@@ -39,24 +39,24 @@ export default function Post({
       </div>
 
       {/* Post Content */}
-      <div className="px-3 pb-3 text-sm">
+      <div className="px-3 pb-3 text-lg">
         <p className="m-0 break-words">{content}</p>
       </div>
 
       {/* Post Stats */}
-      <div className="px-3 pb-3 text-sm text-gray-500 border-b border-gray-100">
+      <div className="px-3 pb-3 text-base text-gray-500 border-b border-gray-100">
         👍 {likes} likes • 💬 {comments} comments
       </div>
 
       {/* Post Actions */}
       <div className="flex">
-        <button className="flex-1 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 transition">
+        <button className="flex-1 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 transition">
           👍 Like
         </button>
-        <button className="flex-1 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 transition">
+        <button className="flex-1 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 transition">
           💬 Comment
         </button>
-        <button className="flex-1 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 transition">
+        <button className="flex-1 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 transition">
           ↗️ Share
         </button>
       </div>

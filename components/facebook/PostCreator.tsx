@@ -20,19 +20,19 @@ export default function PostCreator() {
         <input
           type="text"
           placeholder="What's on your mind?"
-          className="flex-1 border border-gray-100 rounded-full px-4 py-2 text-sm outline-none min-h-[40px] focus:border-gray-300 transition"
+          className="flex-1 border border-gray-100 rounded-full px-4 py-2 text-base outline-none min-h-[40px] focus:border-gray-300 transition"
         />
       </div>
 
       {/* Action Buttons */}
       <div className="flex gap-3 border-t border-gray-100 pt-3 flex-wrap">
-        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
           📹 Live video
         </button>
-        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
           📷 Photo/video
         </button>
-        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition">
+        <button className="flex-1 min-w-[calc(50%_-_6px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
           😊 Feeling
         </button>
       </div>

@@ -22,13 +22,13 @@ export default function ProfileHeader() {
       <div className="flex flex-1 flex-col justify-between lg:flex-row lg:items-start gap-6">
         {/* Identity Block */}
         <div className="space-y-2">
-          <h1 className="text-3xl font-semibold text-gray-900 tracking-tight">
+          <h1 className="text-4xl font-semibold text-gray-900 tracking-tight">
             {PROFILE_DATA.name}
           </h1>
 
-          <p className="text-sm text-gray-500">{PROFILE_DATA.title}</p>
+          <p className="text-xl text-gray-500 font-medium">{PROFILE_DATA.title}</p>
 
-          <p className="text-sm text-gray-600 max-w-md">{PROFILE_DATA.bio}</p>
+          <p className="text-lg text-gray-600 max-w-md">{PROFILE_DATA.bio}</p>
         </div>
 
         {/* Action Buttons */}

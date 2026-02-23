@@ -14,7 +14,7 @@ export default function ProfileNav() {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-none px-4 py-3 text-sm font-medium whitespace-nowrap transition-all ${
+            className={`flex-none px-4 py-3 text-lg font-medium whitespace-nowrap transition-all ${
               activeTab === tab
                 ? "text-blue-600 border-b-4 border-blue-600"
                 : "text-gray-600 hover:text-gray-900"
