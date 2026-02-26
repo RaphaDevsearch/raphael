@@ -13,6 +13,8 @@ import {
   LayoutGrid,
   type LucideIcon,
 } from "lucide-react";
+import { useRef } from "react";
+import ContactPopup from "@/components/layout/ContactPopup";
 
 type NavItem = {
   href: string;
@@ -24,6 +26,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   // on mobil
   const [mobileGridOpen, setMobileGridOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const contactRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -127,15 +131,25 @@ export default function Navbar() {
           </div>
 
           {/* CONTACT ICON */}
-          <button
-            onClick={() => {
-              const target = document.getElementById("contact");
-              if (target) target.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition"
-          >
-            <Mail size={20} />
-          </button>
+          <div className="relative">
+            <button
+              ref={contactRef}
+              onClick={() => setContactOpen((s) => !s)}
+              className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition"
+              aria-expanded={contactOpen}
+              aria-haspopup="dialog"
+            >
+              <Mail size={20} />
+            </button>
+
+            {contactOpen && (
+              <ContactPopup
+                onClose={() => {
+                  setContactOpen(false);
+                }}
+              />
+            )}
+          </div>
 
           {/* PROFILE IMAGE */}
           <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-gray-200 hover:opacity-90 transition cursor-pointer flex-shrink-0">
