@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 
 export default function PostCreator() {
   return (
@@ -26,15 +27,26 @@ export default function PostCreator() {
 
       {/* Action Buttons */}
       <div className="flex gap-2 sm:gap-3 border-t border-gray-100 pt-2 sm:pt-3 flex-wrap">
-        <button className="flex-1 min-w-[calc(50%_-_4px)] sm:min-w-[calc(33.333%_-_8px)] px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-base font-medium hover:bg-gray-100 transition whitespace-nowrap">
+        <Button
+          variant="secondary"
+          className="flex-1 min-w-[calc(50%_-_4px)] sm:min-w-[calc(33.333%_-_8px)] text-xs sm:text-base font-medium whitespace-nowrap"
+        >
           📹 Live video
-        </button>
-        <button className="flex-1 min-w-[calc(50%_-_4px)] sm:min-w-[calc(33.333%_-_8px)] px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-base font-medium hover:bg-gray-100 transition whitespace-nowrap">
+        </Button>
+
+        <Button
+          variant="secondary"
+          className="flex-1 min-w-[calc(50%_-_4px)] sm:min-w-[calc(33.333%_-_8px)] text-xs sm:text-base font-medium whitespace-nowrap"
+        >
           📷 Photo/video
-        </button>
-        <button className="hidden sm:block flex-1 min-w-[calc(33.333%_-_8px)] px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 transition">
+        </Button>
+
+        <Button
+          variant="secondary"
+          className="hidden sm:block flex-1 min-w-[calc(33.333%_-_8px)] px-3 py-2 text-base font-medium"
+        >
           😊 Feeling
-        </button>
+        </Button>
       </div>
     </div>
   );
