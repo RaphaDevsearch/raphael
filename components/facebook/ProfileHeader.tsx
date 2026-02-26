@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import { PROFILE_DATA } from "@/constants/data";
 
 export default function ProfileHeader() {
@@ -75,17 +76,17 @@ export default function ProfileHeader() {
 
           {/* Action Buttons */}
           <div className="flex items-center justify-center sm:justify-start gap-2 flex-shrink-0">
-            <button className="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+            <Button className="px-4 py-2 text-sm font-semibold rounded-md" variant="primary">
               Connect
-            </button>
+            </Button>
 
-            <button className="px-4 py-2 text-sm font-medium bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 transition">
+            <Button className="px-4 py-2 text-sm font-medium rounded-md bg-gray-200 text-gray-900 hover:bg-gray-300" variant="secondary">
               Collaborate
-            </button>
+            </Button>
 
-            <button className="px-3 py-2 text-sm font-medium bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition">
+            <Button className="px-3 py-2 text-sm font-medium hidden sm:inline-flex bg-gray-200 text-gray-700 hover:bg-gray-300" variant="secondary">
               More
-            </button>
+            </Button>
           </div>
         </div>
       </div>
