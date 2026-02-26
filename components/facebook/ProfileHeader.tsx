@@ -16,7 +16,7 @@ export default function ProfileHeader() {
           sm:flex-row sm:items-center sm:justify-between
           gap-3 sm:gap-4 md:gap-6
           px-3 sm:px-4 md:px-6
-          pt-16 sm:py-5 md:py-6
+          pt-10 sm:py-5 md:py-6
           pb-4 sm:pb-5
         "
       >
@@ -24,7 +24,7 @@ export default function ProfileHeader() {
         <div
           className="
             absolute
-            -top-12
+            -top-10
             left-1/2 -translate-x-1/2
 
             sm:static
@@ -54,7 +54,7 @@ export default function ProfileHeader() {
             gap-3 sm:gap-4 md:gap-6
             min-w-0
 
-            mt-14 sm:mt-0
+            mt-8 sm:mt-0
             text-center sm:text-left
           "
         >
