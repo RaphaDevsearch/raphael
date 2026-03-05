@@ -52,7 +52,7 @@ export default function Navbar() {
       <div className="mx-auto px-2 sm:px-3 md:px-4 lg:px-6 h-14 sm:h-16 flex items-center justify-between">
         {/* LEFT LOGO */}
         <Link href="/" className="flex items-center flex-shrink-0">
-          <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-blue-600 text-white font-semibold text-xs sm:text-sm flex items-center justify-center">
+          <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-[#1877F2] text-white font-semibold text-xs sm:text-sm flex items-center justify-center">
             PX
           </div>
         </Link>
@@ -74,12 +74,12 @@ export default function Navbar() {
                   strokeWidth={2}
                   className={`transition-colors ${
                     active
-                      ? "text-blue-800"
-                      : "text-gray-600 group-hover:text-blue-800"
+                      ? "text-[#1877F2]"
+                      : "text-[#65676B] group-hover:text-[#1877F2]"
                   }`}
                 />
                 {active && (
-                  <span className="absolute -bottom-2 w-6 h-1 bg-blue-600 rounded-full" />
+                  <span className="absolute -bottom-2 w-6 h-1 bg-[#1877F2] rounded-full" />
                 )}
               </Link>
             );
@@ -115,13 +115,13 @@ export default function Navbar() {
                         size={22}
                         className={`transition ${
                           active
-                            ? "text-blue-800"
-                            : "text-gray-600 group-hover:text-blue-800"
+                            ? "text-[#1877F2]"
+                            : "text-[#65676B] group-hover:text-[#1877F2]"
                         }`}
                       />
 
                       {active && (
-                        <span className="absolute -bottom-2 w-5 h-1 bg-blue-600 rounded-full" />
+                        <span className="absolute -bottom-2 w-5 h-1 bg-[#1877F2] rounded-full" />
                       )}
                     </Link>
                   );

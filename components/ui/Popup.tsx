@@ -23,9 +23,9 @@ export default function Popup({ children, className = "" }: PopupProps) {
         max-w-[95vw]
 
         bg-white
-        rounded-lg
+        rounded-xl
         shadow-lg
-        border border-gray-100
+        border border-[#E4E6EB]
 
         p-4 sm:p-5 md:p-6
 

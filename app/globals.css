@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f2f5;
+  --foreground: #050505;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-cursive: var(--font-cedarville);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,5 +20,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-cedarville), cursive;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
 }
