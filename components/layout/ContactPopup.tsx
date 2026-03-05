@@ -27,7 +27,9 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
     <Popup>
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold">Contact</h3>
+          <h3 className="text-[26px] sm:text-[30px] md:text-[34px] font-semibold text-blue-800">
+            Contact
+          </h3>
           <button
             onClick={onClose}
             className="p-1 rounded-md hover:bg-gray-100 transition"
@@ -37,21 +39,30 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
           </button>
         </div>
 
-        <p className="text-xs text-gray-600">Quick message or copy my email.</p>
+        <p className="text-[25px] sm:text-[25px] md:text-[26px] text-gray-600">
+          Quick message or copy my email.
+        </p>
 
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Write a short message..."
-          className="w-full min-h-[64px] text-sm p-2 border border-gray-100 rounded-md focus:ring-0 outline-none"
+          className="w-full min-h-[64px] text-[25px] sm:text-[25px] md:text-[26px] text-blue-800 p-2 border border-gray-100 rounded-md focus:ring-0 outline-none"
         />
 
         <div className="flex items-center gap-2">
-          <Button variant="secondary" onClick={copyEmail} className="flex-1 text-sm">
+          <Button
+            variant="secondary"
+            onClick={copyEmail}
+            className="flex-1 text-[25px] sm:text-[25px] md:text-[26px]"
+          >
             Copy email
           </Button>
 
-          <Button onClick={send} className="flex-1 text-sm">
+          <Button
+            onClick={send}
+            className="flex-1 text-[25px] sm:text-[25px] md:text-[26px]"
+          >
             Send
           </Button>
         </div>

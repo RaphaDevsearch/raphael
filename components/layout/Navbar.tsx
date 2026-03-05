@@ -74,8 +74,8 @@ export default function Navbar() {
                   strokeWidth={2}
                   className={`transition-colors ${
                     active
-                      ? "text-blue-600"
-                      : "text-gray-600 group-hover:text-blue-600"
+                      ? "text-blue-800"
+                      : "text-gray-600 group-hover:text-blue-800"
                   }`}
                 />
                 {active && (
@@ -115,8 +115,8 @@ export default function Navbar() {
                         size={22}
                         className={`transition ${
                           active
-                            ? "text-blue-600"
-                            : "text-gray-600 group-hover:text-blue-600"
+                            ? "text-blue-800"
+                            : "text-gray-600 group-hover:text-blue-800"
                         }`}
                       />
 

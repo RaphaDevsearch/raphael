@@ -8,7 +8,6 @@ import { PROFILE_DATA } from "@/constants/data";
 export default function ProfileHeader() {
   return (
     <div className="bg-white border-b border-gray-200">
-
       {/* MOBILE AVATAR WRAPPER LOGIC APPLIED */}
       <div
         className="
@@ -27,14 +26,11 @@ export default function ProfileHeader() {
             absolute
             -top-10
             left-1/2 -translate-x-1/2
-
             sm:static
             sm:translate-x-0
-
             w-24 h-24
             sm:w-28 md:w-[140px]
             sm:h-28 md:h-[140px]
-
             flex-shrink-0
             relative
           "
@@ -54,37 +50,78 @@ export default function ProfileHeader() {
             sm:flex-row sm:items-start
             gap-3 sm:gap-4 md:gap-6
             min-w-0
-
             mt-8 sm:mt-0
             text-center sm:text-left
           "
         >
           {/* Identity Block */}
-          <div className="space-y-1 sm:space-y-2 min-w-0 flex-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight break-words">
+          <div className="space-y-2 min-w-0 flex-1">
+            {/* NAME */}
+            <h1
+              className="
+              text-[32px]
+              sm:text-[36px]
+              md:text-[42px]
+              font-semibold
+              text-blue-800
+              tracking-tight
+              break-words
+            "
+            >
               {PROFILE_DATA.name}
             </h1>
 
-            <p className="text-sm sm:text-base md:text-xl text-gray-500 font-medium break-words">
+            {/* TITLE */}
+            <p
+              className="
+              text-[26px]
+              sm:text-[30px]
+              md:text-[34px]
+              text-blue-800
+              font-medium
+              break-words
+            "
+            >
               {PROFILE_DATA.title}
             </p>
 
-            <p className="text-xs sm:text-sm md:text-base text-gray-600 line-clamp-2 sm:line-clamp-none sm:max-w-md">
+            {/* BIO */}
+            <p
+              className="
+              text-[25px]
+              sm:text-[25px]
+              md:text-[26px]
+              text-blue-800
+              leading-relaxed
+              line-clamp-2
+              sm:line-clamp-none
+              sm:max-w-md
+            "
+            >
               {PROFILE_DATA.bio}
             </p>
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center justify-center sm:justify-start gap-2 flex-shrink-0">
-            <Button className="px-4 py-2 text-sm font-semibold rounded-md" variant="primary">
+            <Button
+              className="px-4 py-2 text-[25px] sm:text-[25px] md:text-[26px] font-semibold rounded-md"
+              variant="primary"
+            >
               Connect
             </Button>
 
-            <Button className="px-4 py-2 text-sm font-medium rounded-md bg-gray-200 text-gray-900 hover:bg-gray-300" variant="secondary">
+            <Button
+              className="px-4 py-2 text-[25px] sm:text-[25px] md:text-[26px] font-medium rounded-md bg-gray-200 text-blue-800 hover:bg-gray-300"
+              variant="secondary"
+            >
               Collaborate
             </Button>
 
-            <Button className="px-3 py-2 text-sm font-medium hidden sm:inline-flex bg-gray-200 text-gray-700 hover:bg-gray-300" variant="secondary">
+            <Button
+              className="px-3 py-2 text-[25px] sm:text-[25px] md:text-[26px] font-medium hidden sm:inline-flex bg-gray-200 text-gray-600 hover:bg-gray-300"
+              variant="secondary"
+            >
               More
             </Button>
           </div>
