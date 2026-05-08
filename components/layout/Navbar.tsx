@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useRef } from "react";
 import ContactPopup from "@/components/layout/ContactPopup";
+import Button from "@/components/ui/Button";
 
 type NavItem = {
   href: string;
@@ -90,12 +91,14 @@ export default function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2 md:gap-4">
           {/* GRID ICON (Mobile App Style) */}
           <div className="relative md:hidden">
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setMobileGridOpen(!mobileGridOpen)}
               className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition"
             >
               <LayoutGrid size={20} />
-            </button>
+            </Button>
 
             {/* POPUP MENU */}
             {mobileGridOpen && (
@@ -132,15 +135,17 @@ export default function Navbar() {
 
           {/* CONTACT ICON */}
           <div className="relative">
-            <button
+            <Button
               ref={contactRef}
+              variant="ghost"
+              size="icon"
               onClick={() => setContactOpen((s) => !s)}
               className="p-1 sm:p-2 rounded-full hover:bg-gray-100 transition"
               aria-expanded={contactOpen}
               aria-haspopup="dialog"
             >
               <Mail size={20} />
-            </button>
+            </Button>
 
             {contactOpen && (
               <ContactPopup

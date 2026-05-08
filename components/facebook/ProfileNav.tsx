@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Button from "@/components/ui/Button";
 
 const PROFILE_TABS = ["All", "About", "Photos", "Videos", "Friends", "More"];
 
@@ -11,8 +12,9 @@ export default function ProfileNav() {
     <div className="bg-white border-b border-gray-100 mb-4 sm:mb-6 overflow-x-auto overflow-y-hidden touch-auto">
       <div className="max-w-4xl mx-auto flex pl-2 sm:pl-4 gap-1 min-w-min">
         {PROFILE_TABS.map((tab) => (
-          <button
+          <Button
             key={tab}
+            variant="ghost"
             onClick={() => setActiveTab(tab)}
             className={`flex-none px-2 sm:px-4 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-medium whitespace-nowrap transition-all ${
               activeTab === tab
@@ -21,7 +23,7 @@ export default function ProfileNav() {
             }`}
           >
             {tab}
-          </button>
+          </Button>
         ))}
       </div>
     </div>

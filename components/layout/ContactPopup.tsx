@@ -28,13 +28,15 @@ export default function ContactPopup({ onClose }: { onClose: () => void }) {
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <h3 className="text-[20px] font-semibold text-[#050505]">Contact</h3>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={onClose}
             className="p-1 rounded-md hover:bg-[#F0F2F5] transition"
             aria-label="Close contact popup"
           >
             ✕
-          </button>
+          </Button>
         </div>
 
         <p className="text-[16px] text-[#65676B]">

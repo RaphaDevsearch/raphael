@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@/components/ui/Button";
 
 export default function Sidebar() {
   return (
@@ -9,9 +10,13 @@ export default function Sidebar() {
           <h3 className="m-0 text-[20px] font-semibold text-[#050505]">
             Personal details
           </h3>
-          <button className="border-none bg-transparent cursor-pointer text-[16px] text-[#050505] hover:text-[#65676B] transition flex-shrink-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-[16px] text-[#050505] hover:text-[#65676B] transition flex-shrink-0"
+          >
             ✎
-          </button>
+          </Button>
         </div>
         <div className="text-[16px] text-[#65676B] leading-relaxed space-y-3">
           <div>
@@ -33,9 +38,13 @@ export default function Sidebar() {
       <div className="bg-white border border-[#E4E6EB] rounded-xl p-4 shadow-md shadow-gray-300">
         <div className="flex justify-between items-center mb-4">
           <h3 className="m-0 text-[20px] font-semibold text-[#050505]">Work</h3>
-          <button className="border-none bg-transparent cursor-pointer text-[16px] text-[#050505] hover:text-[#65676B] transition flex-shrink-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-[16px] text-[#050505] hover:text-[#65676B] transition flex-shrink-0"
+          >
             ✎
-          </button>
+          </Button>
         </div>
         <div className="text-[16px] text-[#65676B] leading-relaxed space-y-3">
           <div>
@@ -59,9 +68,13 @@ export default function Sidebar() {
           <h3 className="m-0 text-[20px] font-semibold text-[#050505]">
             Highlights
           </h3>
-          <button className="border-none bg-transparent cursor-pointer text-[16px] text-[#050505] hover:text-[#65676B] transition flex-shrink-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-[16px] text-[#050505] hover:text-[#65676B] transition flex-shrink-0"
+          >
             ✎
-          </button>
+          </Button>
         </div>
         <div className="text-[16px] text-[#65676B] leading-relaxed space-y-3">
           <div>

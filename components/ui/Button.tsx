@@ -1,34 +1,47 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
+import { Button as ShadcnButton, buttonVariants } from "./button-shadcn";
+import { type VariantProps } from "class-variance-authority";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type LegacyVariant = "primary" | "secondary";
+
+type ShadcnVariant = VariantProps<typeof buttonVariants>["variant"];
+
+type ButtonVariant = LegacyVariant | ShadcnVariant;
+
+export interface ButtonProps
+  extends React.ComponentProps<"button"> {
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: ButtonVariant;
+  size?: VariantProps<typeof buttonVariants>["size"];
+  asChild?: boolean;
 }
 
 export default function Button({
   children,
   className = "",
   variant = "primary",
-  disabled = false,
+  size = "default",
+  asChild = false,
   ...rest
 }: ButtonProps) {
-  // Base styles (cursor handled separately for disabled state)
-  const defaultClassName =
+  const mappedVariant =
     variant === "primary"
-      ? "bg-[#1877F2] text-white rounded-lg px-4 py-2 text-[16px] font-semibold text-sm sm:text-base md:text-lg transition-colors hover:bg-blue-700 hover:border-blue-700 active:scale-95 touch-manipulation"
-      : "bg-[#E4E6EB] text-[#050505] rounded-lg px-4 py-2 text-[16px] font-semibold text-sm sm:text-base md:text-lg transition-colors hover:bg-gray-200 active:scale-95 touch-manipulation";
-
-  const cursorClass = disabled
-    ? "cursor-not-allowed opacity-60"
-    : "cursor-pointer";
-
-  const combined = `${defaultClassName} ${cursorClass} ${className}`.trim();
+      ? "default"
+      : variant === "secondary"
+      ? "secondary"
+      : variant;
 
   return (
-    <button className={combined} disabled={disabled} {...rest}>
+    <ShadcnButton
+      variant={mappedVariant}
+      size={size}
+      asChild={asChild}
+      className={className}
+      {...rest}
+    >
       {children}
-    </button>
+    </ShadcnButton>
   );
 }

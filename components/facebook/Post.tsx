@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import { Post as PostType } from "@/types";
 
 type PostProps = PostType;
@@ -35,9 +36,13 @@ export default function Post({
           </div>
         </div>
 
-        <button className="border-none bg-transparent cursor-pointer text-[16px] text-[#050505] p-1 min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center hover:bg-gray-100 rounded transition flex-shrink-0">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-[16px] text-[#050505] hover:bg-gray-100 rounded transition flex-shrink-0"
+        >
           ⋯
-        </button>
+        </Button>
       </div>
 
       {/* Post Content */}
@@ -52,15 +57,24 @@ export default function Post({
 
       {/* Post Actions */}
       <div className="flex text-[14px] text-[#65676B]">
-        <button className="flex-1 py-2 font-medium hover:bg-gray-100 transition">
+        <Button
+          variant="ghost"
+          className="flex-1 py-2 font-medium hover:bg-gray-100 transition"
+        >
           👍 Like
-        </button>
-        <button className="flex-1 py-2 font-medium hover:bg-gray-100 transition">
+        </Button>
+        <Button
+          variant="ghost"
+          className="flex-1 py-2 font-medium hover:bg-gray-100 transition"
+        >
           💬 Comment
-        </button>
-        <button className="flex-1 py-2 font-medium hover:bg-gray-100 transition">
+        </Button>
+        <Button
+          variant="ghost"
+          className="flex-1 py-2 font-medium hover:bg-gray-100 transition"
+        >
           ↗️ Share
-        </button>
+        </Button>
       </div>
     </div>
   );
