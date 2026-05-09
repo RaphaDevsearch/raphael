@@ -16,7 +16,7 @@ export default function ProfileHeader() {
           sm:flex-row sm:items-center sm:justify-between
           gap-4
           px-4
-          pt-10 sm:py-5 md:py-6
+          pt-24 sm:pt-5 md:pt-6
           pb-4 sm:pb-5
         "
       >
@@ -99,16 +99,16 @@ export default function ProfileHeader() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center justify-center sm:justify-start gap-2 flex-shrink-0">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
             <Button
-              className="px-4 py-2 text-[16px] font-semibold rounded-lg"
+              className="px-4 py-2 text-[16px] font-semibold rounded-lg min-w-[120px]"
               variant="primary"
             >
               Connect
             </Button>
 
             <Button
-              className="px-4 py-2 text-[16px] font-medium rounded-lg bg-[#E4E6EB] text-[#050505] hover:bg-gray-200"
+              className="px-4 py-2 text-[16px] font-medium rounded-lg min-w-[120px] bg-[#E4E6EB] text-[#050505] hover:bg-gray-200"
               variant="secondary"
             >
               Collaborate
